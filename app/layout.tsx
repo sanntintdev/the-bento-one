@@ -15,7 +15,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" className="scroll-smooth">
             <body className={`${afacad.className} antialiased`}>
                 <div className="relative min-h-screen bg-gray-50">
                     <StickyNav />
