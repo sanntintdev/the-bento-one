@@ -1,25 +1,34 @@
-import { Code2, Layout, Database, Cloud, Laptop } from 'lucide-react';
+import { Code2, Layout, Database, Cloud } from 'lucide-react';
 
 export const skills = [
-    {
-        id: 'frontend',
-        name: 'Frontend Development',
-        icon: Layout,
-        description:
-            'Building responsive and interactive user interfaces with modern web technologies.',
-        proficiency: 95,
-        tools: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
-        accentColor: '#0ea5e9',
-        size: 'large',
-    },
     {
         id: 'backend',
         name: 'Backend Development',
         icon: Database,
         description: 'Creating robust and scalable server-side applications.',
         proficiency: 85,
-        tools: ['Node.js', 'Express', 'PostgreSQL'],
+        tools: [
+            'Node.js',
+            'Express',
+            'NestJS',
+            'PHP',
+            'LARAVEL',
+            'MySQL',
+            'PostgreSQL',
+            'MongoDB',
+            'Microservices',
+        ],
         accentColor: '#8b5cf6',
+        size: 'default',
+    },
+    {
+        id: 'frontend',
+        name: 'Frontend Development',
+        icon: Layout,
+        description: 'Building responsive and interactive user interfaces.',
+        proficiency: 80,
+        tools: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+        accentColor: '#0ea5e9',
         size: 'default',
     },
     {
@@ -27,8 +36,8 @@ export const skills = [
         name: 'DevOps',
         icon: Cloud,
         description: 'Managing deployment and infrastructure automation.',
-        proficiency: 80,
-        tools: ['Docker', 'AWS', 'CI/CD'],
+        proficiency: 70,
+        tools: ['Docker', 'AWS', 'Azure', 'CI/CD'],
         accentColor: '#06b6d4',
         size: 'default',
     },
@@ -38,18 +47,8 @@ export const skills = [
         icon: Code2,
         description: 'Core programming languages and software development.',
         proficiency: 90,
-        tools: ['JavaScript', 'TypeScript', 'Python'],
+        tools: ['JavaScript', 'TypeScript', 'PHP', 'Rust', 'Java'],
         accentColor: '#f97316',
-        size: 'default',
-    },
-    {
-        id: 'testing',
-        name: 'Testing',
-        icon: Laptop,
-        description: 'Ensuring code quality through comprehensive testing.',
-        proficiency: 85,
-        tools: ['Jest', 'React Testing Library', 'Cypress'],
-        accentColor: '#ec4899',
         size: 'default',
     },
 ];

@@ -5,7 +5,7 @@ import { SkillCard } from '../skill/SkillCard';
 
 export function Skills() {
     return (
-        <section id="skills" className="relative min-h-screen bg-muted/50 px-4 py-20 lg:px-24">
+        <section id="skills" className="relative min-h-1/2 bg-muted/50 px-4 py-20 lg:px-24">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

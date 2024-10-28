@@ -29,8 +29,8 @@ export function SkillCard({ skill, index }: SkillCardProps) {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className={cn(
                 'group',
-                size === 'large' && 'md:col-span-2 md:row-span-2',
-                index === 0 && 'md:col-span-2 md:row-span-2' // First card is always large
+                size === 'large' && 'md:col-span-1 md:row-span-1',
+                index === 0 && 'md:col-span-1 md:row-span-1' // First card is always large
             )}
         >
             <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-lg">
