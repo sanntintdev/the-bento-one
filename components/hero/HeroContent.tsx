@@ -4,7 +4,7 @@ import { buttonVariants } from '../ui/button';
 
 export function HeroContent() {
     return (
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center lg:px-20 px-4">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

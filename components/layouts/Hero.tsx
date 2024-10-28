@@ -17,7 +17,7 @@ export function Hero() {
     const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
 
     return (
-        <section ref={containerRef} id="hero" className="relative min-h-[150vh] w-full bg-white">
+        <section ref={containerRef} id="hero" className="relative min-h-[150vh] w-full bg-white ">
             <motion.div
                 style={{ opacity, scale }}
                 className="fixed left-0 top-0 flex h-screen w-full items-center justify-between px-6 pt-16 lg:px-28"
