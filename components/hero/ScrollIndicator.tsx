@@ -10,9 +10,9 @@ export function ScrollIndicator({ progress }: ScrollIndicatorProps) {
     return (
         <motion.div
             style={{ opacity }}
-            className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
+            className="absolute bottom-8 left-1/2  -translate-x-1/2 flex flex-col items-center gap-2"
         >
-            <span className="text-sm font-medium text-gray-500">Scroll to explore</span>
+            <span className="text-sm font-medium">Scroll to explore</span>
             <motion.div
                 animate={{
                     y: [0, 10, 0],
@@ -20,12 +20,10 @@ export function ScrollIndicator({ progress }: ScrollIndicatorProps) {
                 transition={{
                     duration: 1.5,
                     repeat: Infinity,
-                    repeatType: 'reverse',
+                    repeatType: 'mirror',
                 }}
-                className="h-16 w-8 rounded-full border-2 border-gray-500 p-2"
-            >
-                <div className="h-3 w-full rounded-full bg-gray-500" />
-            </motion.div>
+                className="h-8 w-[1] bg-muted-foreground"
+            />
         </motion.div>
     );
 }
