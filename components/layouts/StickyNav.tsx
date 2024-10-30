@@ -5,8 +5,11 @@ import { Menu, X } from 'lucide-react';
 import { NAVIGATION_ITEMS, SOCIAL_LINKS } from '@/lib/types';
 import { NavigationItem } from '../ui/navigation-items';
 import { SocialLink } from '../ui/social-links';
+import { usePathname } from 'next/navigation';
 
 export function StickyNav() {
+    const currentPath = usePathname();
+    console.log(currentPath);
     const [activeSection, setActiveSection] = useState<string>('hero');
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -20,7 +23,7 @@ export function StickyNav() {
             const currentSection = sectionElements.find((section) => {
                 if (!section.element) return false;
                 const rect = section.element.getBoundingClientRect();
-                return rect.top <= 100 && rect.bottom >= 100;
+                return rect.top <= 300 && rect.bottom >= 300;
             });
 
             if (currentSection) {
