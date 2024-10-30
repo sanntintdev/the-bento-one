@@ -67,9 +67,9 @@ export function StickyNav() {
                     </div>
 
                     <div className="space-y-4">
-                        {SOCIAL_LINKS.map((link) => (
-                            <SocialLink key={link.label} {...link} />
-                        ))}
+                        {SOCIAL_LINKS.map(
+                            (link) => link.enable && <SocialLink key={link.label} {...link} />
+                        )}
                     </div>
                 </div>
             </nav>
