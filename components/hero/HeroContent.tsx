@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
+import { info } from './data';
+import { FileIcon, Mail } from 'lucide-react';
 
 export function HeroContent() {
-
     const slideInLeft = {
         hidden: { x: -100, opacity: 0 },
         visible: { x: 0, opacity: 1, transition: { duration: 0.6, delay: 0.6 } },
@@ -12,7 +13,6 @@ export function HeroContent() {
         visible: { x: 0, opacity: 1, transition: { duration: 0.6, delay: 0.6 } },
     };
 
-    // Desktop Layout with Bento Grid
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -31,7 +31,7 @@ export function HeroContent() {
                 >
                     <h1 className="text-6xl font-bold tracking-tight lg:text-8xl">
                         <span className="text-8xl">_</span>
-                        I&apos;m Sann Tint Aung
+                        {info.greeting}
                     </h1>
                 </motion.div>
 
@@ -42,10 +42,7 @@ export function HeroContent() {
                     variants={slideInRight}
                     className="col-span-1 flex items-center rounded-3xl bg-muted/50 p-6"
                 >
-                    <p className="text-base text-muted-foreground">
-                        I&apos;ve been in the development industry since +5 years. I craft digital
-                        products that are useful & enjoyable for the final users.
-                    </p>
+                    <p className="text-xs lg:text-base text-muted-foreground">{info.aboutMeOne}</p>
                 </motion.div>
 
                 {/* Second Description - 1 column */}
@@ -55,10 +52,7 @@ export function HeroContent() {
                     variants={slideInLeft}
                     className="col-span-1 flex items-center rounded-3xl bg-muted/50 p-6"
                 >
-                    <p className="text-base text-muted-foreground">
-                        I&apos;ve worked with some of the most ambitious brands such as Google,
-                        Apple, Space X, Amazon, and many more
-                    </p>
+                    <p className="text-xs lg:text-base text-muted-foreground">{info.aboutMeTwo}</p>
                 </motion.div>
 
                 {/* Role Title - Spans 3 columns */}
@@ -69,7 +63,7 @@ export function HeroContent() {
                     className="col-span-3 rounded-3xl bg-muted/50 p-8"
                 >
                     <h2 className="text-6xl font-bold tracking-tight lg:text-8xl">
-                        Backend Developer
+                        {info.position}
                         <span className="text-8xl">_</span>
                     </h2>
                 </motion.div>
@@ -81,28 +75,53 @@ export function HeroContent() {
                     transition={{ duration: 0.6, delay: 0.8 }}
                     className="col-span-4 mt-6 grid grid-cols-4 gap-6"
                 >
-                    {/* Tech Stack */}
+                    {/* Highlights Box */}
                     <div className="col-span-2 rounded-3xl bg-muted/50 p-6">
-                        <h3 className="mb-4 text-lg font-semibold">Tech Stack</h3>
-                        <div className="flex flex-wrap gap-2">
-                            {/* Add your tech stack icons/labels here */}
+                        <h3 className="mb-4 text-lg font-semibold">Highlights</h3>
+                        <div className="flex justify-around">
+                            {info.highlights.map(({ label, value }, index) => (
+                                <div key={index} className="text-center">
+                                    <div className="text-2xl font-bold">{value}</div>
+                                    <div className="text-sm text-muted-foreground">{label}</div>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Quick Stats */}
-                    <div className="col-span-2 rounded-3xl bg-muted/50 p-6">
-                        <h3 className="mb-4 text-lg font-semibold">Experience</h3>
-                        <div className="flex justify-around">
-                            <div className="text-center">
-                                <div className="text-2xl font-bold">5+</div>
-                                <div className="text-sm text-muted-foreground">Years</div>
+                    <button
+                        onClick={() => window.open('/resume.pdf', '_blank')}
+                        className="col-span-1 group relative overflow-hidden rounded-3xl bg-muted/50 p-4 transition-all hover:bg-muted/70"
+                    >
+                        <div className="flex flex-col items-start gap-3">
+                            <div className="rounded-full bg-black/5 p-2">
+                                <FileIcon className="h-5 w-5 transition-transform group-hover:-translate-y-0.5" />
                             </div>
-                            <div className="text-center">
-                                <div className="text-2xl font-bold">50+</div>
-                                <div className="text-sm text-muted-foreground">Projects</div>
+                            <div className="space-y-1">
+                                <p className="text-lg font-semibold text-gray-900">Resume</p>
+                                <h3 className="text-sm font-medium text-gray-500 group-hover:text-gray-600">
+                                    Download
+                                </h3>
                             </div>
                         </div>
-                    </div>
+                    </button>
+
+                    {/* Email Box */}
+                    <a
+                        href={`mailto:${info.mail}`}
+                        className="col-span-1 group relative overflow-hidden rounded-3xl bg-muted/50 p-4 transition-all hover:bg-muted/70"
+                    >
+                        <div className="flex flex-col items-start gap-3">
+                            <div className="rounded-full bg-black/5 p-2">
+                                <Mail className="h-5 w-5 transition-transform group-hover:-translate-y-0.5" />
+                            </div>
+                            <div className="space-y-1">
+                                <p className="text-lg font-semibold text-gray-900">Email</p>
+                                <h3 className="text-sm font-medium text-gray-500 group-hover:text-gray-600">
+                                    Write me
+                                </h3>
+                            </div>
+                        </div>
+                    </a>
                 </motion.div>
             </div>
         </motion.div>

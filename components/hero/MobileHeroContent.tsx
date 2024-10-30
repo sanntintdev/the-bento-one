@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { info } from './data';
+import { FileIcon, Mail } from 'lucide-react';
 
 export function MobileHeroContent() {
     const fadeUp = {
@@ -20,7 +22,7 @@ export function MobileHeroContent() {
                     variants={fadeUp}
                     className="rounded-3xl bg-muted/50 p-6"
                 >
-                    <h1 className="text-4xl font-bold tracking-tight">I&apos;m Sann Tint Aung</h1>
+                    <h1 className="text-4xl font-bold tracking-tight">{info.greeting}</h1>
                 </motion.div>
 
                 <motion.div
@@ -29,10 +31,7 @@ export function MobileHeroContent() {
                     variants={fadeUp}
                     className="rounded-3xl bg-muted/50 p-6"
                 >
-                    <p className="text-sm text-muted-foreground">
-                        I&apos;ve been in the development industry since +5 years. I craft digital
-                        products that are useful & enjoyable for the final users.
-                    </p>
+                    <h2 className="text-4xl font-bold tracking-tight">{info.position}</h2>
                 </motion.div>
 
                 <motion.div
@@ -41,20 +40,64 @@ export function MobileHeroContent() {
                     variants={fadeUp}
                     className="rounded-3xl bg-muted/50 p-6"
                 >
-                    <h2 className="text-4xl font-bold tracking-tight">Backend Developer</h2>
+                    <p className="text-sm text-muted-foreground">{info.aboutMeOne}</p>
                 </motion.div>
 
+                {/* Highlights Section - Horizontal Scroll */}
                 <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={fadeUp}
-                    className="rounded-3xl bg-muted/50 p-6"
+                    className="rounded-3xl bg-muted/50 p-4"
                 >
-                    <p className="text-sm text-muted-foreground">
-                        I&apos;ve worked with some of the most ambitious brands such as Google,
-                        Apple, Space X, Amazon, and many more
-                    </p>
+                    <div className="flex gap-4 overflow-x-auto pb-2">
+                        {info.highlights.map(({ label, value }, index) => (
+                            <div key={index} className="flex-none text-center">
+                                <div className="text-sm text-muted-foreground">{label}</div>
+                                <div className="text-xl font-bold">{value}</div>
+                            </div>
+                        ))}
+                    </div>
                 </motion.div>
+
+                {/* Compact Contact Buttons */}
+                <div className="grid grid-cols-2 gap-3">
+                    <motion.button
+                        initial="hidden"
+                        animate="visible"
+                        variants={fadeUp}
+                        onClick={() => window.open('/resume.pdf', '_blank')}
+                        className="group rounded-2xl bg-muted/50 p-3"
+                    >
+                        <div className="flex items-center gap-2">
+                            <div className="rounded-full bg-black/5 p-1.5">
+                                <FileIcon className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5" />
+                            </div>
+                            <div>
+                                <div className="text-xs text-muted-foreground">Download</div>
+                                <div className="text-sm font-medium">Resume</div>
+                            </div>
+                        </div>
+                    </motion.button>
+
+                    <motion.a
+                        initial="hidden"
+                        animate="visible"
+                        variants={fadeUp}
+                        href={`mailto:${info.mail}`}
+                        className="group rounded-2xl bg-muted/50 p-3"
+                    >
+                        <div className="flex items-center gap-2">
+                            <div className="rounded-full bg-black/5 p-1.5">
+                                <Mail className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5" />
+                            </div>
+                            <div>
+                                <div className="text-xs text-muted-foreground">Write</div>
+                                <div className="text-sm font-medium">Email</div>
+                            </div>
+                        </div>
+                    </motion.a>
+                </div>
             </div>
         </motion.div>
     );
