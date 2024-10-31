@@ -2,29 +2,20 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ProjectData, projects } from '../project/data';
-import { ProjectFilter } from '../project/ProjectFilter';
 import { ProjectCard } from '../project/ProjectCard';
 import { ProjectModal } from '../project/ProjectModal';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 
-type FilterType = 'all' | 'web' | 'mobile' | 'design';
 const PROJECTS_PER_PAGE = 6;
 
 export function Projects() {
-    const [filter, setFilter] = useState<FilterType>('all');
     const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
     const [showAll, setShowAll] = useState(false);
 
-    const filteredProjects = projects.filter((project) =>
-        filter === 'all' ? true : project.category === filter
-    );
+    const displayedProjects = showAll ? projects : projects.slice(0, PROJECTS_PER_PAGE);
 
-    const displayedProjects = showAll
-        ? filteredProjects
-        : filteredProjects.slice(0, PROJECTS_PER_PAGE);
-
-    const hasMoreProjects = filteredProjects.length > PROJECTS_PER_PAGE;
+    const hasMoreProjects = projects.length > PROJECTS_PER_PAGE;
 
     return (
         <>
@@ -47,13 +38,13 @@ export function Projects() {
                         </p>
                     </div>
 
-                    <ProjectFilter
+                    {/* <ProjectFilter
                         currentFilter={filter}
                         onFilterChange={(newFilter) => {
                             setFilter(newFilter);
                             setShowAll(false);
                         }}
-                    />
+                    /> */}
 
                     <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-4 p-4">
                         {displayedProjects.map((project, index) => (
@@ -91,7 +82,7 @@ export function Projects() {
 
                             {/* Project Count */}
                             <p className="mt-4 text-sm text-muted-foreground">
-                                Showing {PROJECTS_PER_PAGE} of {filteredProjects.length} projects
+                                Showing {PROJECTS_PER_PAGE} of {projects.length} projects
                             </p>
                         </motion.div>
                     )}

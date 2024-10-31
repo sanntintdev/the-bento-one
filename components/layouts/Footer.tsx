@@ -5,7 +5,7 @@ export function Footer() {
                 <p className="text-sm text-muted-foreground">
                     Turning ideas into reality, one line of code at a time
                 </p>
-                <p className="text-sm text-muted-foreground">© 2024 sanntintaung.</p>
+                <p className="text-sm text-muted-foreground">© 2024 sanntintaung</p>
             </div>
         </footer>
     );

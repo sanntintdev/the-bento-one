@@ -1,5 +1,4 @@
 import {
-    Briefcase,
     Code2,
     FolderCode,
     Github,
@@ -13,7 +12,7 @@ import {
 export const NAVIGATION_ITEMS = [
     { id: 'hero', icon: LampDesk, label: 'Home' },
     { id: 'projects', icon: FolderCode, label: 'Projects' },
-    { id: 'experience', icon: Briefcase, label: 'Experience' },
+    // { id: 'experience', icon: Briefcase, label: 'Experience' },
     { id: 'skills', icon: Code2, label: 'Skills' },
     { id: 'contact', icon: MessageCircle, label: 'Contact' },
 ] as const;

@@ -13,7 +13,7 @@ export const info = {
         },
         {
             label: 'Projects Delivered',
-            value: '10+',
+            value: '15+',
         },
         {
             label: 'API Endpoints Built',

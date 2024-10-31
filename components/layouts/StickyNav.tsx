@@ -20,7 +20,7 @@ export function StickyNav() {
             const currentSection = sectionElements.find((section) => {
                 if (!section.element) return false;
                 const rect = section.element.getBoundingClientRect();
-                return rect.top <= 100 && rect.bottom >= 100;
+                return rect.top <= 300 && rect.bottom >= 300;
             });
 
             if (currentSection) {

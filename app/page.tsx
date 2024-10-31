@@ -1,5 +1,4 @@
 import { Contact } from '@/components/layouts/Contact';
-import { Experiences } from '@/components/layouts/Experiences';
 import { Footer } from '@/components/layouts/Footer';
 import { Hero } from '@/components/layouts/Hero';
 import { Projects } from '@/components/layouts/Projects';
@@ -10,7 +9,7 @@ export default function Home() {
         <main>
             <Hero />
             <Projects />
-            <Experiences />
+            {/* <Experiences /> */}
             <Skills />
             <Contact />
             <Footer />
