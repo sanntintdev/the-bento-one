@@ -5,11 +5,8 @@ import { Menu, X } from 'lucide-react';
 import { NAVIGATION_ITEMS, SOCIAL_LINKS } from '@/lib/types';
 import { NavigationItem } from '../ui/navigation-items';
 import { SocialLink } from '../ui/social-links';
-import { usePathname } from 'next/navigation';
 
 export function StickyNav() {
-    const currentPath = usePathname();
-    console.log(currentPath);
     const [activeSection, setActiveSection] = useState<string>('hero');
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 

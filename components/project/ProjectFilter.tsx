@@ -10,9 +10,9 @@ interface ProjectFilterProps {
 export function ProjectFilter({ currentFilter, onFilterChange }: ProjectFilterProps) {
     const filters = [
         { id: 'all', label: 'All Projects' },
-        { id: 'web', label: 'Web Apps' },
-        { id: 'mobile', label: 'Mobile Apps' },
-        { id: 'design', label: 'Design' },
+        { id: 'backend', label: 'Backend' },
+        { id: 'frontend', label: 'Frontend' },
+        { id: 'fullstack', label: 'Full Stack' },
     ];
 
     return (
