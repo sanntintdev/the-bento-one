@@ -25,7 +25,7 @@ export const projects = [
         image: '/images/projects/Editor_Freepik.pngditor_Freepik.png',
         category: 'frontend',
         technologies: ['React.js', 'Next.js', 'TailwindCSS', 'Framer Motion'],
-        github: 'https://github.com',
+        github: 'https://github.com/sanntintdev/the-bento-one',
         // live: 'https://www.abc.com/',
         details: {
             overview:
@@ -59,7 +59,7 @@ export const projects = [
         image: '/images/projects/Editor_Freepik.png',
         category: 'fullstack',
         technologies: ['React.js', 'Next.js', 'TailwindCSS', 'Supabase', 'Real-time API'],
-        github: 'https://github.com',
+        // github: 'https://github.com',
         // live: 'https://www.abc.com/',
         details: {
             overview:
