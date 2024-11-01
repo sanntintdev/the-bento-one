@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { info } from './data';
 import { FileIcon, Mail } from 'lucide-react';
+import { FeatureTooltip } from '../ui/feature-tooltip';
 
 export function MobileHeroContent() {
     const fadeUp = {
@@ -62,23 +63,25 @@ export function MobileHeroContent() {
 
                 {/* Compact Contact Buttons */}
                 <div className="grid grid-cols-2 gap-3">
-                    <motion.button
-                        initial="hidden"
-                        animate="visible"
-                        variants={fadeUp}
-                        onClick={() => window.open('/resume.pdf', '_blank')}
-                        className="group rounded-2xl bg-muted/50 p-3"
-                    >
-                        <div className="flex items-center gap-2">
-                            <div className="rounded-full bg-black/5 p-1.5">
-                                <FileIcon className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5" />
+                    <FeatureTooltip>
+                        <motion.button
+                            initial="hidden"
+                            animate="visible"
+                            variants={fadeUp}
+                            onClick={(e) => e.preventDefault()}
+                            className="group rounded-2xl bg-muted/50 p-3 hover:bg-red-50 dark:hover:bg-red-900/30"
+                        >
+                            <div className="flex items-center gap-2">
+                                <div className="rounded-full bg-black/5 p-1.5">
+                                    <FileIcon className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5" />
+                                </div>
+                                <div>
+                                    <div className="text-xs text-muted-foreground">Download</div>
+                                    <div className="text-sm font-medium">Resume</div>
+                                </div>
                             </div>
-                            <div>
-                                <div className="text-xs text-muted-foreground">Download</div>
-                                <div className="text-sm font-medium">Resume</div>
-                            </div>
-                        </div>
-                    </motion.button>
+                        </motion.button>
+                    </FeatureTooltip>
 
                     <motion.a
                         initial="hidden"
