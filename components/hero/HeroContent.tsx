@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { info } from './data';
 import { FileIcon, Mail } from 'lucide-react';
+import { FeatureTooltip } from '../ui/feature-tooltip';
 
 export function HeroContent() {
     const slideInLeft = {
@@ -88,22 +89,24 @@ export function HeroContent() {
                         </div>
                     </div>
 
-                    <button
-                        onClick={() => window.open('/resume.pdf', '_blank')}
-                        className="col-span-1 group relative overflow-hidden rounded-3xl bg-muted/50 p-4 transition-all hover:bg-red"
-                    >
-                        <div className="flex flex-col items-start gap-3">
-                            <div className="rounded-full bg-black/5 p-2">
-                                <FileIcon className="h-5 w-5 transition-transform group-hover:-translate-y-0.5" />
+                    <FeatureTooltip>
+                        <button
+                            onClick={(e) => e.preventDefault()}
+                            className="col-span-1 group relative overflow-hidden rounded-3xl bg-muted/50 p-4 transition-all hover:bg-red-50 dark:hover:bg-red-900/30"
+                        >
+                            <div className="flex flex-col items-start gap-3">
+                                <div className="rounded-full bg-black/5 p-2">
+                                    <FileIcon className="h-5 w-5 transition-transform group-hover:-translate-y-0.5" />
+                                </div>
+                                <div className="space-y-1">
+                                    <p className="text-lg font-semibold text-gray-900">Resume</p>
+                                    <h3 className="text-sm font-medium text-gray-500 group-hover:text-gray-600">
+                                        Download
+                                    </h3>
+                                </div>
                             </div>
-                            <div className="space-y-1">
-                                <p className="text-lg font-semibold text-gray-900">Resume</p>
-                                <h3 className="text-sm font-medium text-gray-500 group-hover:text-gray-600">
-                                    Download
-                                </h3>
-                            </div>
-                        </div>
-                    </button>
+                        </button>
+                    </FeatureTooltip>
 
                     {/* Email Box */}
                     <a
