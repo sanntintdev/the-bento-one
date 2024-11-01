@@ -90,7 +90,7 @@ export function HeroContent() {
 
                     <button
                         onClick={() => window.open('/resume.pdf', '_blank')}
-                        className="col-span-1 group relative overflow-hidden rounded-3xl bg-muted/50 p-4 transition-all hover:bg-muted/70"
+                        className="col-span-1 group relative overflow-hidden rounded-3xl bg-muted/50 p-4 transition-all hover:bg-red"
                     >
                         <div className="flex flex-col items-start gap-3">
                             <div className="rounded-full bg-black/5 p-2">
