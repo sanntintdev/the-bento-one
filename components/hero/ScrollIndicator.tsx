@@ -1,3 +1,4 @@
+import { DoubleArrowDownIcon } from '@radix-ui/react-icons';
 import { motion, MotionValue, useTransform } from 'framer-motion';
 
 type ScrollIndicatorProps = {
@@ -22,8 +23,9 @@ export function ScrollIndicator({ progress }: ScrollIndicatorProps) {
                     repeat: Infinity,
                     repeatType: 'mirror',
                 }}
-                className="h-8 w-[1] bg-muted-foreground"
-            />
+            >
+                <DoubleArrowDownIcon className="w-6 h-6 text-primary" />
+            </motion.div>
         </motion.div>
     );
 }
