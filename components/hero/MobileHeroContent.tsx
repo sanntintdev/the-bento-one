@@ -4,7 +4,7 @@ import { FileIcon, Mail } from 'lucide-react';
 
 export function MobileHeroContent() {
     const fadeUp = {
-        hidden: { y: 20, opacity: 0 },
+        hidden: { y: 10, opacity: 0 },
         visible: { y: 0, opacity: 1, transition: { duration: 0.6, delay: 0.4 } },
     };
 
