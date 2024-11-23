@@ -20,5 +20,6 @@ export const info = {
             value: '100+',
         },
     ],
+    resume: 'https://drive.google.com/file/d/1Ljmr-6zccZH7yaEhmX3Wvd8NkmC6b7LR/view?usp=drive_link',
     mail: 'sanntintaung.dev@gmail.com',
 };
